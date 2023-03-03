@@ -1,0 +1,83 @@
+python.exe -m pip install --upgrade pip
+pip install pipenv
+pipenv install django
+pipenv install --dev flake8
+
+
+
+#criar ambiente virtual
+#ativa venv
+# instala django
+>>>python3 -m venv venv
+>>>source venv/bin/activate
+>>>pip install django
+
+#criar projeto django
+#django-admin starproject 'nome' .
+>>>django-admin startproject monitor_baixa .
+#criar app
+#python3 manage.py startapp 'nome'
+>>>python3 manage.py startapp unidades
+
+#configuração MySql
+#instalar mysqlclient
+
+>>>pip install mysqlclient
+
+#settings
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'helpsweb',
+        'USER': 'root',
+        'PASSWORD': 'ect-2023',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    },
+
+#mapear Banco EXISTENTE
+>>>python3 manage.py inspectdb > nome_da_app/models.py
+
+#Pasta do projeto
+#arquivo settings:
+
+#instalar o app
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'app',
+]
+
+
+#configurar urls
+#arquivo urls.py
+importar o app.views na raiz da home
+>>>from app.views import home
+
+#criar home
+#arquivo views do app
+
+#Templates
+#na pasta do app
+    criar pasta templates
+    criar arquivo index.html
+        <!DOCTYPE html>
+        <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <title>Titulo</title>
+        </head>
+        <body>
+
+        </body>
+        </html>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
