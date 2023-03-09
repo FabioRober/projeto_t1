@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+        <meta charset="UTF-8">
+    <title>Pendencia Nacional</title>
+    <link rel="shortcut icon" sizes="64x64" href="https://cdn.correios.com.br/v2/img/favi-ect.png">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap_5.css' %}">
+</head>
+<body>
+    <img src="{% static 'img/logo.png' %}" width="200" alt="100">
+    <div class="col-8 m-auto pt-2 pb-3 text-center">
+        <h1>Pesquisa pendencias</h1>
+    </div>
+    <hr>
+
+    <div class="col-8 m-auto pt-2 pb-4 text-center">
+        <form  method="get">
+            <input type="text" id="search" name="search" class="form-inline" class="form-control" autocomplete="off" autofocus placeholder="Buscar...Enter">
+<!--            <a href="/form" class="btn btn-info">Adicionar</a>-->
+        </form>
+    </div>
+
+    <hr>
+
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">data</th>
+              <th scope="col">siglase</th>
+              <th scope="col">cargalancada</th>
+              <th scope="col">cargabaixada</th>
+              <th scope="col">percentual</th>
+
+            </tr>
+          </thead>
+          <tbody>
+              {% for dbs in db %}
+                <tr>
+                  <th>{{dbs.id}}</th>
+                  <td>{{dbs.data}}</td>
+                  <td>{{dbs.siglase}}</td>
+                  <td>{{dbs.cargalancada}}</td>
+                  <td>{{dbs.cargabaixada}}</td>
+                  <td>{{dbs.percentual}}</td>
+                    <td>
+                      <a href="/view/{{dbs.id}}/" class="btn btn-info">Visualizar</a>
+<!--                      <a href="/edit/{{dbs.id}}/" class="btn btn-primary">Editar</a>-->
+<!--                      <a href="/delete/{{dbs.id}}/" class="btn btn-danger btnDel">Deletar</a>-->
+                  </td>
+                </tr>
+              {% endfor %}
+          </tbody>
+        </table>
+    </div>
+
+<!--    <nav class="pagination justify-content-center"aria-label="Page navigation example">-->
+<!--      <ul class="pagination" >-->
+<!--        <li class="page-item">-->
+<!--          {% if db.has_previous %}-->
+<!--            <a class="page-link" href="?page={{db.previous_page_number}}" aria-label="Previous">-->
+<!--                <span aria-hidden="true">&laquo;</span>-->
+<!--            </a>-->
+<!--          {% endif %}-->
+<!--        </li>-->
+
+<!--        <span class="current">-->
+<!--            <li class="page-item"><a class="page-link" href="#">{{ db.number }} de {{ db.paginator.num_pages }}</a></li>-->
+
+<!--        </span>-->
+
+<!--        <li class="page-item">-->
+<!--          {% if db.has_next %}-->
+<!--            <a class="page-link" href="?page={{db.next_page_number}}" aria-label="Next">-->
+<!--                <span aria-hidden="true">&raquo;</span>-->
+<!--            </a>-->
+<!--          {% endif %}-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </nav>-->
+
+
+<script src="{% static 'css/bootstrap_5js' %}"></script>
+<script src="{% static 'js/javascript.js' %}"></script>
+</body>
+</html>

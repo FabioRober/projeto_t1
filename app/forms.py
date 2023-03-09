@@ -1,8 +1,8 @@
 from django.forms import ModelForm
-from app.models import Carros
+from app.models import Cadastro
 
 
-class CarrosForm(ModelForm):
+class CadastroForm(ModelForm):
     class Meta:
-        model = Carros
-        fields = ['modelo', 'marca', 'ano']
+        model = Cadastro
+        fields = ['gerencia', 'mcu', 'sro', 'unidade', 'vinculacao', 'email']

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ah-kzoy_j9#akrxar-$gy=czus98*kgx_2issyzrv$33de^4oi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_bootstrap_icons',
     'app',
+    'pendencia_nacional',
+    'pendencia_loec'
 ]
 
 MIDDLEWARE = [
@@ -77,10 +80,39 @@ WSGI_APPLICATION = 'projeto1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Cadastro_Unidades_RS',
+        'USER': 'root',
+        'PASSWORD': 'ect-2023',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    },
+    'db_nacional': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'SROMONITOR_2023_NACIONAL',
+        'USER': 'root',
+        'PASSWORD': 'ect-2023',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    },
+    'db_loec': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'SROMONITOR_2023_REGIONAL_LOEC',
+        'USER': 'root',
+        'PASSWORD': 'ect-2023',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    },
+    'db_ldi': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'SROMONITOR_2023_REGIONAL_LDI',
+        'USER': 'root',
+        'PASSWORD': 'ect-2023',
+        'HOST': 'localhost',
+        'PORT': '3306',
+},
 }
+
 
 
 # Password validation
@@ -118,7 +150,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+BS_ICONS_CUSTOM_PATH = [os.path.join(BASE_DIR, 'static')]
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

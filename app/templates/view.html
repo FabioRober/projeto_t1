@@ -4,7 +4,7 @@
      {% load static %}
     <meta charset="UTF-8">
     <title>Formulario</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap_5.css' %}">
 </head>
 <body>
     <div class="col-8 m-auto pt-2 pb-3 text-center">
@@ -16,9 +16,13 @@
     </div>
 
     <div class="col-8 m-auto pt-4 pb-2 text-center">
-        <strong>Modelo: </strong>{{db.modelo}}<br>
-        <strong>Marca: </strong>{{db.marca}}<br>
-        <strong>Ano: </strong>{{db.ano}}<br>
+        <form-
+        <strong>MCU: </strong>{{db.mcu}}<br>
+        <strong>SRO: </strong>{{db.sro}}<br>
+        <strong>Unidade: </strong>{{db.unidade}}<br>
+        <strong>Gerencia: </strong>{{db.gerencia}}<br>
+        <strong>Vinculação: </strong>{{db.vinculacao}}<br>
+        <strong>Email: </strong>{{db.email}}<br>
     </div>
 </body>
 </html>

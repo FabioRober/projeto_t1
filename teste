@@ -1,0 +1,10 @@
+    <div class="col-8 m-auto pt-2 pb-4 text-center">
+        <form action="?" method="GET">
+            <label for="pesquisa" class="form-label">Pesquisa Unidade</label>
+            <input type="text" class="form-control" name="carro" id="pesquisa" value="{{request.GET.carro}}" autocomplete="off" placeholder="Nome ou parte do texto">
+            <br>
+            <button type="submit" class="btn btn-success">Buscar</button>
+            <a href="" class="btn btn-success">Limpar</a>
+            <a href="/form" class="btn btn-info">Adicionar</a>
+        </form>
+    </div>

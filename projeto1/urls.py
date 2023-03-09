@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from app.views import home, form, create, view, edit, update, delete
+from pendencia_nacional.views import pendencia
 
 
 urlpatterns = [
@@ -12,4 +13,4 @@ urlpatterns = [
     path('edit/<int:pk>/', edit, name='edit'),
     path('update/<int:pk>/', update, name='update'),
     path('delete/<int:pk>/', delete, name='delete'),
- ]
+   ]
