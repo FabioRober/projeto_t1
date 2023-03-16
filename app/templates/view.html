@@ -3,8 +3,9 @@
 <head>
      {% load static %}
     <meta charset="UTF-8">
-    <title>Formulario</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap_5.css' %}">
+    <title>Detalhes</title>
+    <link rel="shortcut icon" sizes="64x64" href="{% static 'ico/logo.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 </head>
 <body>
     <div class="col-8 m-auto pt-2 pb-3 text-center">
@@ -15,14 +16,15 @@
         <a href="/" class="btn btn-info">Voltar</a>
     </div>
 
-    <div class="col-8 m-auto pt-4 pb-2 text-center">
-        <form-
+    <div>
+        <form class="col-8 m-auto pt-4 pb-2 text-left">
         <strong>MCU: </strong>{{db.mcu}}<br>
         <strong>SRO: </strong>{{db.sro}}<br>
         <strong>Unidade: </strong>{{db.unidade}}<br>
         <strong>Gerencia: </strong>{{db.gerencia}}<br>
         <strong>Vinculação: </strong>{{db.vinculacao}}<br>
         <strong>Email: </strong>{{db.email}}<br>
+        </form>
     </div>
 </body>
 </html>

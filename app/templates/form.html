@@ -3,8 +3,10 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
-    <title>Formulario</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap_5.css' %}">
+    <title>Cadastro</title>
+    <link rel="shortcut icon" sizes="64x64" href="{% static 'ico/logo.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 </head>
 <body>
     <div class="col-8 m-auto pt-2 pb-3 text-center">
@@ -20,12 +22,12 @@
     <form name="form" id="form" action="{% if db %}/update/{{db.id}}/{%else%}/create/{% endif %}" method="post">
         {% csrf_token %}
         <!--{{form.as_p}}-->
-        <div class="form-group mt-4">Modelo: {{form.mcu}}</div>
-        <div class="form-group mt-4">Marca: {{form.sro}}</div>
-        <div class="form-group mt-4">Ano: {{form.unidade}}</div>
-        <div class="form-group mt-4">Modelo: {{form.gerencia}}</div>
-        <div class="form-group mt-4">Marca: {{form.vinculacao}}</div>
-        <div class="form-group mt-4">Ano: {{form.email}}</div>
+        <div class="form-group mt-4">MCU: {{form.mcu}}</div>
+        <div class="form-group mt-4">SRO: {{form.sro}}</div>
+        <div class="form-group mt-4">UNIDADE: {{form.unidade}}</div>
+        <div class="form-group mt-4">GERENCIA: {{form.gerencia}}</div>
+        <div class="form-group mt-4">VINCULAÇÃO: {{form.vinculacao}}</div>
+        <div class="form-group mt-4">E-mail: {{form.email}}</div>
         <input type="submit" class="btn btn-success" value="Salvar">
     </form>
 </div>

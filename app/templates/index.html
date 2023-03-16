@@ -4,9 +4,9 @@
 <head>
         <meta charset="UTF-8">
     <title>Pesquisa Unidades</title>
-    <link rel="shortcut icon" sizes="64x64" href="https://cdn.correios.com.br/v2/img/favi-ect.png">
+    <link rel="shortcut icon" sizes="64x64" href="{% static 'ico/logo.ico' %}">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap_5.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 </head>
 <body>
     <img src="{% static 'img/logo.png' %}" width="200" alt="100">
@@ -28,7 +28,7 @@
         <table class="table">
           <thead class="thead-dark">
             <tr>
-              <th scope="col">#</th>
+<!--              <th scope="col">#</th>-->
               <th scope="col">MCU</th>
               <th scope="col">SRO</th>
               <th scope="col">Unidade</th>
@@ -41,7 +41,7 @@
           <tbody>
               {% for dbs in db %}
                 <tr>
-                  <th>{{dbs.id}}</th>
+<!--                  <th>{{dbs.id}}</th>-->
                   <td>{{dbs.mcu}}</td>
                   <td>{{dbs.sro}}</td>
                   <td>{{dbs.unidade}}</td>
@@ -51,7 +51,7 @@
                   <td>
                       <a href="/view/{{dbs.id}}/" class="btn btn-info">Visualizar</a>
                       <a href="/edit/{{dbs.id}}/" class="btn btn-primary">Editar</a>
-                      <a href="/delete/{{dbs.id}}/" class="btn btn-danger btnDel">Deletar</a>
+                      <a href="/delete/{{dbs.id}}/" class="btn btn-danger btnDel" autofocus >Deletar</a>
                   </td>
                 </tr>
               {% endfor %}
